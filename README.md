@@ -1,31 +1,37 @@
+# W03 Blazing Pizza Application
 
-# Contributing
+A .NET Blazor web application completed for the CSE 325 Week 03 assignment.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Student
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+- **Name:** Samuel Apusiyine Avike
+- **Country:** Ghana
+- **Currency:** Ghanaian cedi (GHS)
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Assignment features
 
-# Legal Notices
+- Displays database-backed pizza specials.
+- Uses GHS for every visible price.
+- Supports pizza-size configuration and cart management.
+- Includes checkout, order history, and order-detail routes.
+- Uses a shared Blazor layout for navigation and footer content.
+- Displays the student's full name and country in the footer.
 
-Microsoft and any contributors grant you a license to the Microsoft documentation and other content
-in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
-see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
-[LICENSE-CODE](LICENSE-CODE) file.
+## Run locally
 
-Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation
-may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
-The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
-Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
+Install the .NET 10 SDK, then run:
 
-Privacy information can be found at https://privacy.microsoft.com/en-us/
+```powershell
+dotnet restore
+dotnet run
+```
 
-Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
-or trademarks, whether by implication, estoppel or otherwise.
+Open the local address printed in the terminal, normally `http://localhost:5000`.
+
+## Submission
+
+The project source is published to GitHub. The running-application screenshot is submitted separately as an image file in Canvas.
+
+## Attribution
+
+This project is based on the Microsoft Learn Blazing Pizza training application. See `LICENSE` and `LICENSE-CODE` for the original content and source-code licenses.

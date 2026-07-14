@@ -11,6 +11,12 @@ body {
     overflow-y: hidden;
 }
 
+#app {
+    height: calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+}
+
 form {
     width: 100%;
 }
@@ -46,9 +52,22 @@ form {
 
 .content {
     display: flex;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     z-index: 1;
     background-color: white;
+}
+
+footer {
+    flex: 0 0 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    color: #fff2cc;
+    background: #5c0000;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.25);
+    font-size: 0.95rem;
 }
 
 .main {
@@ -199,7 +218,7 @@ form {
     }
 
 .price::before {
-    content: '£';
+    content: '';
     font-weight: 300;
     font-size: 1.2rem;
     margin-right: 0.2rem;
@@ -242,7 +261,7 @@ form {
 }
 
 .order-total.hidden {
-    transform: translate3d(0, 4rem, 0);
+    display: none;
 }
 
     .order-total .total-price {
@@ -251,7 +270,7 @@ form {
     }
 
         .order-total .total-price::before {
-            content: '£';
+            content: '';
             font-weight: 300;
             margin: 0 0.1rem 0 0.4rem;
         }
@@ -308,7 +327,7 @@ form {
 }
 
     .item-price::before {
-        content: '£';
+        content: '';
         font-weight: 100;
         margin-right: 0.3rem;
     }
@@ -455,7 +474,7 @@ form {
 }
 
 .dialog .topping-price::before {
-    content: '£';
+    content: '';
 }
 
 .delete-topping {

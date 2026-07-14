@@ -1,0 +1,52 @@
+@page "/checkout"
+@inject OrderState OrderState
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+
+<div class="main">
+    <div class="checkout-cols">
+        <div class="checkout-order-details">
+            <h4>Review order</h4>
+            @foreach (var pizza in Order.Pizzas)
+            {
+                <p>
+                    <strong>
+                        @(pizza.Size)" @pizza.Special.Name
+                        (@AppBranding.CurrencySymbol@pizza.GetFormattedTotalPrice())
+                    </strong>
+                </p>
+            }
+            <p>
+                <strong>Total price: @AppBranding.CurrencySymbol@Order.GetFormattedTotalPrice()</strong>
+            </p>
+        </div>
+    </div>
+
+    <button class="checkout-button btn btn-warning"
+            @onclick="PlaceOrder"
+            disabled="@(isSubmitting || Order.Pizzas.Count == 0)">
+        @(isSubmitting ? "Placing order..." : "Place order")
+    </button>
+</div>
+
+@code {
+    private bool isSubmitting;
+    private Order Order => OrderState.Order;
+
+    private async Task PlaceOrder()
+    {
+        isSubmitting = true;
+        try
+        {
+            var response = await HttpClient.PostAsJsonAsync($"{NavigationManager.BaseUri}orders", Order);
+            response.EnsureSuccessStatusCode();
+            var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+            OrderState.ResetOrder();
+            NavigationManager.NavigateTo($"myorders/{newOrderId}");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+}
